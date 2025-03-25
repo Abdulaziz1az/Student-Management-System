@@ -1,3 +1,4 @@
+from student import Student
 class StudentManager:
     def __init__(self):
         self.students = [] # list to store the student object 
@@ -11,16 +12,17 @@ class StudentManager:
             if student.get_id() == studentId:
                 self.students.remove(student)
                 print("Student deleted successfuly.")
+            else:
                 return 
         print("Student not found")
         
     def updateStudent(self, studentId, newName, newAge, newGrade):
         for student in self.students:
-            if student.get_id() == studentId:
+            if student.get_student_id() == studentId:
                 student.set_name(newName)
                 student.set_age(newAge)
                 student.set_grade(newGrade)
-                print("Student update successfuly.")
+                print("Student update successfuly.")                
                 return 
         print("Student not found.")
     
